@@ -1,0 +1,67 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js version
+
+PATH: 
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\ThisTNTSquid\bin;C:\Python310\Scripts;C:\Python310;C:\Program Files\Eclipse Adoptium\jdk-17.0.1.12-hotspot\bin;C:\Program Files (x86)\VMware\VMware Workstation\bin;C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\bin;E:\OracleDB\WINDOWS.X64_193000_db_home\bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64_win\compiler;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\ia32_win\compiler;C:\Python38\Scripts;C:\Python38;C:\Program Files\Amazon Corretto\jdk1.8.0_252\bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk1.8.0_162\bin;C:\Program Files (x86)\Yarn\bin;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Microsoft VS Code Insiders\bin;C:\Program Files\ffmpeg-20200816-5df9724-win64-static\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\dotnet;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\MongoDB\Server\4.4\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn;C:\Program Files\PuTTY;C:\Program Files (x86)\ZeroTier\One;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;%NVM_HOME%;%NVM_SYMLINK%;C:\Program Files\Git\cmd;C:\Users\ThisTNTSquid\AppData\Local\Programs\Python\Python38-32\Scripts;C:\Users\ThisTNTSquid\AppData\Local\Programs\Python\Python38-32;C:\Users\ThisTNTSquid\AppData\Local\atom\bin;C:\Users\ThisTNTSquid\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code Insiders\bin;C:\tools\cmder;C:\Users\ThisTNTSquid\AppData\Local\Yarn\bin;C:\Users\ThisTNTSquid\AppData\Roaming\Composer\vendor\bin;C:\Users\ThisTNTSquid\.dotnet\tools;C:\Users\ThisTNTSquid\AppData\Roaming\npm;C:\Users\ThisTNTSquid\AppData\Roaming\nvm;C:\Program Files\nodejs
+
+Yarn version: 
+  1.6.0
+
+Node version: 
+  16.13.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:129516:13)
+      at Interface.emit (node:events:390:28)
+      at Interface._ttyWrite (node:readline:1081:16)
+      at ReadStream.onkeypress (node:readline:288:10)
+      at ReadStream.emit (node:events:390:28)
+      at emitKeys (node:internal/readline/utils:358:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (node:internal/readline/emitKeypressEvents:61:36)
+      at ReadStream.emit (node:events:390:28)
+      at addChunk (node:internal/streams/readable:315:12)
+
+npm manifest: 
+  {
+    "name": "web-push-notification-app",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/app/index.js",
+    "scripts": {
+      "clean": "rimraf dist",
+      "mkdir": "mkdirp dist/client",
+      "copy": "cpy client/* dist/client",
+      "prebuild": "npm run clean && npm run mkdir && npm run copy",
+      "build": "tsc",
+      "prestart": "npm run build",
+      "start": "node .",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "@types/web-push": "^3.3.0",
+      "express": "^4.17.1",
+      "mongoose": "^5.10.0",
+      "typescript": "^3.9.7",
+      "web-push": "^3.4.4"
+    },
+    "devDependencies": {
+      "@types/express": "^4.17.7",
+      "cpy-cli": "^3.1.1",
+      "mkdirp": "^1.0.4",
+      "rimraf": "^3.0.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

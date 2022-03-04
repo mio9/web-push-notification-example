@@ -1,0 +1,5 @@
+{
+  "watch": ["app","client"],                 
+  "ext": "ts",
+  "exec": "yarn prebuild && yarn bootstrap"
+}

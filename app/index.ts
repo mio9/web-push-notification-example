@@ -5,6 +5,7 @@ import database from './config/database';
 import initializeRoutes from './routes';
 import webpush from './config/webpush';
 
+
 const app = express();
 const port = 8080; // default port to listen
 

@@ -5,7 +5,7 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-const publicVapidKey = 'BMrfFtMtL9IWl9vchDbbbYzJlbQwplyZ_fbv8Pei8gPNna_Dr1O-Ng7U7fy0LLqz5RKIxEytTIzyk6TLrcKbN30';
+const publicVapidKey = 'BJ95QykDkZBpRRQEIZ2tSlvHKQI3NRcg42ydlcOnfTw7VQArRtjmkhBkgMA0fAub7JKmfsZmQUpqZp2Z_pk7RGI';
 
 const urlBase64ToUint8Array = (base64String) => {
   const padding = '='.repeat((4 - base64String.length % 4) % 4);

@@ -7,11 +7,13 @@
     "clean": "rimraf dist",
     "mkdir": "mkdirp dist/client",
     "copy": "cpy client/* dist/client",
-    "prebuild": "npm run clean && npm run mkdir && npm run copy",
+    "prebuild": "yarn clean && yarn mkdir && yarn copy",
     "build": "tsc",
-    "prestart": "npm run build",
-    "start": "node .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prestart": "yarn build",
+    "bootstrap": "yarn build && yarn node .",
+    "start": "nodemon .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "keygen": "yarn dlx web-push generate-vapid-keys"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +29,8 @@
     "@types/express": "^4.17.7",
     "cpy-cli": "^3.1.1",
     "mkdirp": "^1.0.4",
+    "nodemon": "^2.0.15",
     "rimraf": "^3.0.2"
-  }
+  },
+  "packageManager": "yarn@3.1.1"
 }
