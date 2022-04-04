@@ -5,7 +5,7 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-const publicVapidKey = 'BJ95QykDkZBpRRQEIZ2tSlvHKQI3NRcg42ydlcOnfTw7VQArRtjmkhBkgMA0fAub7JKmfsZmQUpqZp2Z_pk7RGI';
+const publicVapidKey = 'BCGCDm1yl8nX1WZbW6t6WtB4_v7mqyAIFPqztZs-pWBucoD9onTjPZdqeqldElN0Yl76nGNKsMAUP6JGXW0tfUg';
 
 const urlBase64ToUint8Array = (base64String) => {
   const padding = '='.repeat((4 - base64String.length % 4) % 4);
@@ -43,16 +43,18 @@ window.subscribe = async () => {
     applicationServerKey: urlBase64ToUint8Array(publicVapidKey),
   });
 
-  const response = await fetch('/subscription', {
+  const response = await fetch('http://localhost:8500/api/notification/subscribe', {
     method: 'POST',
     body: JSON.stringify(subscription),
     headers: {
       'content-type': 'application/json',
+      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2IjoyLCJhIjo5MDU2LCJ5IjoibG9jYWwiLCJ0IjoicGVyc29uIiwiZSI6Nzc4MSwiYyI6IkRFViIsInUiOiJrZW4uY2hhbitjaGF0MTBAc3dpdmVsc29mdHdhcmUuY29tIiwiaSI6dHJ1ZSwiaWF0IjoxNjM5NzEzOTc4LCJleHAiOjQ3NjM5MTYzNzgsImlzcyI6IiIsInN1YiI6IiJ9.G6wj-Fv1NQfVI2YLeOVqJGdJTbygteJEzSSb3QdICEM'
     },
   });
 
   if (response.ok) {
     setSubscribeMessage();
+    console.dir(response);
   }
 };
 
@@ -62,10 +64,12 @@ window.unsubscribe = async () => {
   if (!subscription) return;
 
   const { endpoint } = subscription;
-  const response = await fetch(`/subscription?endpoint=${endpoint}`, {
-    method: 'DELETE',
+  const response = await fetch(`http://localhost:8500/api/notification/unsubscribe`, {
+    method: 'POST',
+    body: JSON.stringify(subscription),
     headers: {
       'content-type': 'application/json',
+      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2IjoyLCJhIjo5MDU2LCJ5IjoibG9jYWwiLCJ0IjoicGVyc29uIiwiZSI6Nzc4MSwiYyI6IkRFViIsInUiOiJrZW4uY2hhbitjaGF0MTBAc3dpdmVsc29mdHdhcmUuY29tIiwiaSI6dHJ1ZSwiaWF0IjoxNjM5NzEzOTc4LCJleHAiOjQ3NjM5MTYzNzgsImlzcyI6IiIsInN1YiI6IiJ9.G6wj-Fv1NQfVI2YLeOVqJGdJTbygteJEzSSb3QdICEM'
     },
   });
 
@@ -76,7 +80,7 @@ window.unsubscribe = async () => {
 };
 
 window.broadcast = async () => {
-  await fetch('/broadcast', {
+  await fetch('http://localhost:8500/api/notification/send', {
     method: 'GET',
     headers: {
       'content-type': 'application/json',

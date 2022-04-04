@@ -1,0 +1,14 @@
+{
+  "PublicBukkitValues": {
+    "slimefun:slimefun_guide_mode": "SURVIVAL_MODE"
+  },
+  "display": {
+    "Lore": [
+      "{\"text\":\"\"}",
+      "{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"yellow\",\"text\":\"Right Click \"},{\"italic\":false,\"color\":\"dark_gray\",\"text\":\"⇨ \"},{\"italic\":false,\"color\":\"gray\",\"text\":\"Browse Items\"}],\"text\":\"\"}",
+      "{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"yellow\",\"text\":\"Shift + Right Click \"},{\"italic\":false,\"color\":\"dark_gray\",\"text\":\"⇨ \"},{\"italic\":false,\"color\":\"gray\",\"text\":\"Open Settings / Credits\"}],\"text\":\"\"}"
+    ],
+    "Name": "{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"Slimefun Guide \"},{\"italic\":false,\"color\":\"gray\",\"text\":\"(Chest GUI)\"}],\"text\":\"\"}"
+  },
+  "CustomModelData": 2200001
+}
